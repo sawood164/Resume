@@ -59,7 +59,6 @@ Snail shared a working loan system built using Cursor.
 
 ##  Understanding MCP & AI Agent Integration  
  
-![Screenshot](screenshots/07.png)
 
 - MCP (Model Context Protocol) helps connect tools like GitHub or API scanners to Cursor agents.
 - Agents use MCP tools to observe, reason, and act more intelligently.
@@ -68,7 +67,7 @@ Snail shared a working loan system built using Cursor.
 
 ##  Foundational Takeaways on Cursor Rule Philosophy  
   
-![Screenshot](screenshots/08.png)
+![Screenshot](screenshots/07.png)
 
 - **Always > Manual > Ask** – be intentional about when rules apply.
 - Good rules:
@@ -83,13 +82,13 @@ Snail shared a working loan system built using Cursor.
 
 ### 1. "Failure is Not an Option"  
  
-![Screenshot](screenshots/09.png)
+![Screenshot](screenshots/08.png)
 
 - NASA’s “seven minutes of terror” was used as a metaphor: critical software must be dependable.
 
 ### 2. Survival Curve of AI Projects  
  
-![Screenshot](screenshots/10.png)
+![Screenshot](screenshots/9.png)
 
 - Fewer than 5% of AI projects make it to production. Most fail due to lack of direction, design, or persistence.
 
@@ -98,7 +97,7 @@ Snail shared a working loan system built using Cursor.
 - a) **Quo Vadis?** – Align everything with a meaningful business goal.  
 - b) **Festina Lente** – Go fast, but never skip quality.  
     
-  ![Screenshot](screenshots/11.png)
+  ![Screenshot](screenshots/10.png)
 - c) **Tyranny of Data** – Most AI work is cleaning, labeling, and preparing data.
 -  
   d) **No Free Lunch** – Don’t assume one model or design will always work. Test options.  
