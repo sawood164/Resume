@@ -95,7 +95,7 @@ Snail presented a complete loan management system developed via Cursor.
 ### 3. Principles for Successful Projects
 
 - ❓ **Quo Vadis?** *(Where are we going?)* – Keep AI aligned to business outcomes.  
-- 🐢 **Festina Lente** *(Make haste slowly)* – Move fast but without cutting corners. *(01:29:58)*![image](https://github.com/user-attachments/assets/97c4334c-1797-443e-a983-891e4dee4f9a)
+- 🐢 **Festina Lente** *(Make haste slowly)* – Move fast but without cutting corners.📍 *Screenshot at *(01:29:58)*![image](https://github.com/user-attachments/assets/97c4334c-1797-443e-a983-891e4dee4f9a)
  
 - 📊 **Tyranny of Data** – Data labeling and curation is 80% of AI effort.  
 - 🧪 **No Free Lunch Theorem** – Don’t assume one approach will work. Test all.  
