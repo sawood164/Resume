@@ -99,7 +99,8 @@ Snail shared a working loan system built using Cursor.
 - b) **Festina Lente** – Go fast, but never skip quality.  
     
   ![Screenshot](screenshots/11.png)
-- c) **Tyranny of Data** – Most AI work is cleaning, labeling, and preparing data.  
+- c) **Tyranny of Data** – Most AI work is cleaning, labeling, and preparing data.
+-  
   d) **No Free Lunch** – Don’t assume one model or design will always work. Test options.  
 - e) **Explore the Unknown** – Take a discovery mindset.  
 - f) **Collective Intelligence** – Diverse teams solve better than top-down decision-making.  
