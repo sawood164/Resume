@@ -39,6 +39,6 @@
 - Submitted it to **Masoom Rahi Sir**.
 
 **Task 2:** Learning Activity  
-- Watched and studied content from the **Foundations of AI** course to strengthen theoretical understanding.
+- Watched and studied content from the **Foundations of AI**.
 
 ---
