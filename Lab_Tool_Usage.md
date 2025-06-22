@@ -8,7 +8,7 @@
 **Task:** Identification of Libraries & Frameworks for Lab 2 (LLM Bootcamp)  
 - Analyzed all project files related to Day 2 / Lab 2.  
 - Compiled a detailed list of libraries and frameworks used.  
-- Submitted the findings to **Ravi Sir**.
+- Submitted to **Ravi Sir**.
 
 ---
 
