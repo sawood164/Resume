@@ -5,6 +5,7 @@
 
 ### Question 1
 What is the fundamental problem that RAG solves compared to traditional search engines?
+
 A) Search engines are too slow to process queries
 B) Search engines only return hyperlinks, requiring users to manually explore documents to find answers
 C) Search engines cannot handle natural language queries
