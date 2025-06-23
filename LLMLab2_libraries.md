@@ -1,14 +1,14 @@
 
 
-
-## Top 15 Question LLM Video-2
-
 ### Question 1
 What is the fundamental problem that RAG solves compared to traditional search engines?
 
 A) Search engines are too slow to process queries
+
 B) Search engines only return hyperlinks, requiring users to manually explore documents to find answers
+
 C) Search engines cannot handle natural language queries
+
 D) Search engines don't support multiple languages
 
 **Answer:** B) Search engines only return hyperlinks, requiring users to manually explore documents to find answers
@@ -23,9 +23,13 @@ D) Search engines don't support multiple languages
 
 ### Question 2
 In a RAG pipeline, what are the two main components that work together to generate natural language answers?
+
 A) Parser and Chunker
+
 B) Retriever (search engine) and LLM (Large Language Model)
+
 C) Embedder and Vector Database
+
 D) Query Processor and Response Formatter
 
 **Answer:** B) Retriever (search engine) and LLM (Large Language Model)
@@ -40,9 +44,13 @@ D) Query Processor and Response Formatter
 
 ### Question 3
 Why does the instructor recommend using smaller LLMs in RAG systems instead of very large ones?
+
 A) Smaller LLMs are more accurate
+
 B) Smaller LLMs consume less memory
+
 C) In RAG, the LLM has a simple task (reformatting retrieved information), and smaller models allow for more instances to run on GPU clusters
+
 D) Smaller LLMs are easier to fine-tune
 
 **Answer:** C) In RAG, the LLM has a simple task (reformatting retrieved information), and smaller models allow for more instances to run on GPU clusters
@@ -57,9 +65,13 @@ D) Smaller LLMs are easier to fine-tune
 
 ### Question 4
 What is the main security advantage of RAG over fine-tuning LLMs with proprietary data?
+
 A) RAG systems are encrypted by default
+
 B) RAG systems don't store data permanently
+
 C) In RAG, security filters can be applied to the retrieval system, and the LLM doesn't remember proprietary data after inference
+
 D) RAG systems require authentication for every query
 
 **Answer:** C) In RAG, security filters can be applied to the retrieval system, and the LLM doesn't remember proprietary data after inference
@@ -74,9 +86,13 @@ D) RAG systems require authentication for every query
 
 ### Question 5
 What are the three main stages in the data injection pipeline for RAG?
+
 A) Download, Process, Store
+
 B) Parsing, Chunking, Embedding/Indexing
+
 C) Extract, Transform, Load
+
 D) Collect, Validate, Deploy
 
 **Answer:** B) Parsing, Chunking, Embedding/Indexing
@@ -91,9 +107,13 @@ D) Collect, Validate, Deploy
 
 ### Question 6
 What computational challenge does the instructor highlight about using very large LLMs (like 450 billion parameters)?
+
 A) They require too much storage space
+
 B) They are too slow to load into memory
+
 C) Due to autoregressive nature, generating a 100-token answer requires 100 forward passes, each computing 450 billion parameters
+
 D) They cannot handle concurrent requests
 
 **Answer:** C) Due to autoregressive nature, generating a 100-token answer requires 100 forward passes, each computing 450 billion parameters
@@ -108,9 +128,13 @@ D) They cannot handle concurrent requests
 
 ### Question 7
 According to the instructor, what is the primary factor that provides the biggest improvement in RAG system performance?
+
 A) Using larger, more powerful LLMs
+
 B) Implementing better retrieval algorithms
+
 C) Improving data quality through derivative data creation (summaries, knowledge graphs, better chunking)
+
 D) Increasing the size of the vector database
 
 **Answer:** C) Improving data quality through derivative data creation (summaries, knowledge graphs, better chunking)
@@ -127,9 +151,13 @@ D) Increasing the size of the vector database
 
 ### Question 8
 What is the primary problem with running the basic "Hello World" RAG example code in production?
+
 A) The embedding model is too slow
+
 B) The vector database doesn't support enough documents
+
 C) The code performs expensive parsing, chunking, and indexing operations on every user request
+
 D) The LLM responses are not accurate enough
 
 **Answer:** C) The code performs expensive parsing, chunking, and indexing operations on every user request
@@ -144,9 +172,13 @@ D) The LLM responses are not accurate enough
 
 ### Question 9
 In the demonstration, how many chunks were created from a single chapter about ancient Indian and Chinese civilization?
+
 A) 20 chunks
+
 B) 30 chunks
+
 C) 40 chunks
+
 D) 50 chunks
 
 **Answer:** C) 40 chunks
@@ -161,9 +193,13 @@ D) 50 chunks
 
 ### Question 10
 When the instructor deliberately changed the query from "ancient Indian civilization" to "ancient Greek civilization," what happened and why is this problematic?
+
 A) The system returned an error message
+
 B) The LLM used its parametric memory to answer about Greek civilization despite it not being in the documents
+
 C) The vector database crashed due to the mismatch
+
 D) The embedding model failed to process the query
 
 **Answer:** B) The LLM used its parametric memory to answer about Greek civilization despite it not being in the documents
@@ -178,9 +214,13 @@ D) The embedding model failed to process the query
 
 ### Question 11
 According to the instructor, what is the data exfiltration risk when using external LLM APIs like OpenAI?
+
 A) The API costs are too expensive
+
 B) Confidential data from your documents gets sent to external servers
+
 C) The responses are not accurate enough
+
 D) The processing speed is too slow
 
 **Answer:** B) Confidential data from your documents gets sent to external servers
@@ -195,9 +235,13 @@ D) The processing speed is too slow
 
 ### Question 12
 What percentage of queries are typically semantic repeats according to the instructor, and what hardware savings can semantic caching provide?
+
 A) 80% repeats, 5x hardware savings
+
 B) 90% repeats, 10x hardware savings
+
 C) 95% repeats, 15x hardware savings
+
 D) 85% repeats, 8x hardware savings
 
 **Answer:** B) 90% repeats, 10x hardware savings
@@ -212,9 +256,13 @@ D) 85% repeats, 8x hardware savings
 
 ### Question 13
 Why does the instructor implement a consistency check between the embedder and vector database?
+
 A) To verify the authentication credentials
+
 B) To ensure the embedding vector size matches the vector database collection schema
+
 C) To check if the database has enough storage space
+
 D) To validate the query syntax
 
 **Answer:** B) To ensure the embedding vector size matches the vector database collection schema
@@ -229,9 +277,13 @@ D) To validate the query syntax
 
 ### Question 14
 According to the instructor's best practices, what four components should a complete RAG response include?
+
 A) Answer, metadata, timestamp, user ID
+
 B) Key insights, recommended quotes, thoughtful answer, follow-up questions
+
 C) Query, response, confidence score, processing time
+
 D) Source documents, embeddings, tokens used, cost calculation
 
 **Answer:** B) Key insights, recommended quotes, thoughtful answer, follow-up questions
@@ -246,9 +298,13 @@ D) Source documents, embeddings, tokens used, cost calculation
 
 ### Question 15
 What technique does the instructor suggest to prevent LLM hallucination and ensure responses are grounded in search results?
+
 A) Use smaller language models only
+
 B) Increase the temperature parameter to 0
+
 C) Ask the LLM to cite specific search results for every statement in its response
+
 D) Limit responses to exactly 50 tokens
 
 **Answer:** C) Ask the LLM to cite specific search results for every statement in its response
@@ -258,4 +314,3 @@ D) Limit responses to exactly 50 tokens
 **Timestamp:** [01:17:02]
 
 **Explanation:** The instructor recommends asking the LLM to point to specific search results that substantiate every statement in its response. This prevents hallucination and ensures the LLM cannot use its parametric memory, as it must back up everything with source documents from the search results.
-```
