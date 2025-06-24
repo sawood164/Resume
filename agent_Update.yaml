@@ -1,74 +1,216 @@
-orchestrate_pipeline_task:
-  description: >
-    Oversee the entire multi-agent summarization pipeline.
-    Coordinate execution across agents in the correct sequence, ensure timely handoffs, monitor task progress, and resolve any conflicts or failures in real-time.
-  expected_output: >
-    A coordination report including:
-    - Execution timestamps for each agent
-    - Sequence integrity confirmation
-    - Notes on any issues encountered or recovered
-  agent: coordinator
+course_questions:
+  part_1:
+    title: "Agentic Shipping Application"
+    questions:
+      - question_number: 1
+        title: "Project Architecture Overview"
+        question: "What are the two main steps outlined for building the agentic shipping application?"
+        options:
+          A: "Extract PDF data into tables, then create a database-driven conversational agent"
+          B: "Build a React frontend, then integrate with OpenAI API"
+          C: "Create a web scraper, then implement machine learning models"
+          D: "Design UI components, then write backend services"
+        correct_answer: "A"
+        correct_answer_text: "Extract PDF data into tables, then create a database-driven conversational agent"
+        topic: "Project Architecture & Agentic Application Design"
+        timestamp: "[00:00:03] - [00:01:43]"
+        explanation: "The instructor clearly outlines the two-step process: first extract tabular data from PDF (which students have completed), then create an agentic application where users can have conversations using the extracted table as the knowledge base."
 
-search_news_task:
-  description: >
-    Search and retrieve a diverse set of trustworthy and recent news articles on the topic: {topic}.
-    Utilize the Serper API with structured queries, applying your unique search strategy to optimize coverage, credibility, and freshness.
-    Maintain a belief state of search coverage and log article metadata.
-  expected_output: >
-    A curated list of at least 8 relevant news articles including:
-    - Title
-    - Source/Publisher
-    - Publication date
-    - 2-sentence content summary
-    - Article URL
-  agent: search_agent_serper
+      - question_number: 2
+        title: "Agent Task Decomposition"
+        question: "According to the instructor, what is the correct chain of thought process for the agent when handling a user query like 'I need to ship my 11 pound laptop to Ithaca New York urgently'?"
+        options:
+          A: "Check price → Find zone → Filter by weight → Provide recommendation"
+          B: "Find zone → Determine weight → Filter data → Interpret and explain to user"
+          C: "Calculate shipping cost → Find fastest option → Present results"
+          D: "Parse location → Check availability → Generate response"
+        correct_answer: "B"
+        correct_answer_text: "Find zone → Determine weight → Filter data → Interpret and explain to user"
+        topic: "Agent Task Planning & Decomposition"
+        timestamp: "[00:01:43] - [00:03:19]"
+        explanation: "The instructor specifically explains the agent's chain of thought: first figure out the zone, then find the weight of goods, filter the data accordingly, and finally interpret and explain the results to the user."
 
-validate_news_task:
-  description: >
-    Validate the credibility and accuracy of facts in the articles collected by the search agents.
-    Cross-reference multiple sources, identify inconsistencies or misinformation, and apply heuristic-based fact-checking.
-    Assign a confidence score (0 to 1) to each factual claim based on source reliability and agreement.
-  expected_output: >
-    A structured validation report containing:
-    - List of extracted facts
-    - Confidence score for each fact
-    - Notes on cross-source consistency or conflict
-    - Flagged sources (if any)
-  agent: validator
+      - question_number: 3
+        title: "Data Structure Requirements"
+        question: "What table structure does the instructor recommend when combining ground and air shipping data?"
+        options:
+          A: "Separate tables for air and ground with identical columns"
+          B: "Single table with columns: Zone, Type (air/ground), Service, Price"
+          C: "Nested JSON structure with shipping methods as arrays"
+          D: "Key-value pairs with shipping type as the primary key"
+        correct_answer: "B"
+        correct_answer_text: "Single table with columns: Zone, Type (air/ground), Service, Price"
+        topic: "Database Design & Data Structure"
+        timestamp: "[00:55:00] - [00:58:38]"
+        explanation: "The instructor draws out the recommended table structure showing columns for zone, type (air or ground), service type/name, and price, making it easier to filter data for queries."
 
-analyze_content_task:
-  description: >
-    Analyze validated news content to extract coherent narratives, timelines, and central themes.
-    Use natural language processing to categorize topics, detect sentiment, and uncover patterns or contradictions across sources.
-  expected_output: >
-    A structured analysis report that includes:
-    - Thematic summary of the topic
-    - Chronological sequence of events (if available)
-    - Identified trends, key entities, and topic clusters
-    - Notable sentiment indicators or discrepancies
-  agent: analyst
+      - question_number: 4
+        title: "User Interface Recommendations"
+        question: "Which two UI solutions does the instructor highly recommend for building the conversational interface, and what are their key advantages?"
+        options:
+          A: "Streamlit and Gradio - because they're easy to learn"
+          B: "React and Vue.js - because they're modern frameworks"
+          C: "Open Web UI and LibreChat - because they provide ChatGPT-like interfaces with massive community support"
+          D: "Flask and Django - because they're full-stack solutions"
+        correct_answer: "C"
+        correct_answer_text: "Open Web UI and LibreChat - because they provide ChatGPT-like interfaces with massive community support"
+        topic: "User Interface Development & Tool Selection"
+        timestamp: "[00:18:43] - [00:24:48]"
+        explanation: "The instructor emphasizes Open Web UI (99.7K GitHub stars) and LibreChat (27K stars) as leading solutions that provide ready-made ChatGPT-like interfaces. He mentions Open Web UI has a 10-15 minute setup with easier learning curve, while both have become the de facto chat interface standard."
 
-generate_summary_task:
-  description: >
-    Generate a professionally written, objective news summary using the analyst report.
-    Maintain journalistic tone, proper structure, and clear attribution of facts and sources.
-    Adapt the writing style to suit digital publication standards.
-  expected_output: >
-    A 3–5 paragraph article that includes:
-    - Clear headline and subheading (if needed)
-    - Neutral tone with logical flow
-    - Inline attribution (e.g., "According to BBC...")
-    - Embedded citations using source title and outlet
-  agent: content_generator
+      - question_number: 5
+        title: "Advanced Query Handling"
+        question: "What type of user query does the instructor mention as a more complex scenario that the agent should handle beyond basic shipping lookups?"
+        options:
+          A: "What's the fastest shipping option available?"
+          B: "I can only afford up to $40 for shipping, what would you recommend?"
+          C: "Show me all shipping options to California"
+          D: "What's the weight limit for overnight shipping?"
+        correct_answer: "B"
+        correct_answer_text: "I can only afford up to $40 for shipping, what would you recommend?"
+        topic: "Advanced Query Processing & Recommendation Systems"
+        timestamp: "[00:04:56] - [00:06:37]"
+        explanation: "The instructor emphasizes this budget-constrained query as more realistic and challenging, requiring the agent to make recommendations, possibly suggest alternatives like ground shipping, or mention slightly higher-priced options ($42 air shipping)."
 
-edit_summary_task:
-  description: >
-    Perform a final editorial review of the AI-generated summary to ensure clarity, correctness, and consistency.
-    Apply quality checks across grammar, structure, citations, tone, and SEO readiness.
-    Format the article for publishing, ensuring alignment with editorial and compliance standards.
-  expected_output: >
-    A polished, reader-friendly final version that includes:
-    - Edited article (ready-to-publish)
-    - SEO metadata (keywords, slug suggestion)
-    - Editorial notes or improvement suggestions (if any)
-  agent: senior_editor
+      - question_number: 6
+        title: "Take-Home Assignment Requirements"
+        question: "What are the specific constraints for the take-home homework assignment regarding model selection and the learning objective behind it?"
+        options:
+          A: "Use any cloud-based API to reduce local computational load"
+          B: "Use local LLM with maximum 30 billion parameters to demonstrate agents work with small models"
+          C: "Use GPT-4 with custom fine-tuning for better accuracy"
+          D: "Use multiple models in ensemble for improved performance"
+        correct_answer: "B"
+        correct_answer_text: "Use local LLM with maximum 30 billion parameters to demonstrate agents work with small models"
+        topic: "Local LLM Deployment & Agent Philosophy"
+        timestamp: "[01:08:58] - [01:15:11]"
+        explanation: "The instructor emphasizes three key learning lessons: (1) agents use tools, (2) agents work with small models - you don't need big models, and (3) learning text-to-SQL. The 30B parameter limit demonstrates that effective agents don't require frontier models, while the database becomes a tool for the small local LLM."
+
+      - question_number: 7
+        title: "Tool Integration Strategy"
+        question: "What tool does the instructor recommend for implementing text-to-SQL functionality in the agentic application?"
+        options:
+          A: "LangChain SQL agents"
+          B: "Vanna AI (vanna.ai)"
+          C: "SQLAlchemy with custom parsers"
+          D: "OpenAI Function Calling"
+        correct_answer: "B"
+        correct_answer_text: "Vanna AI (vanna.ai)"
+        topic: "Tool Integration & Text-to-SQL Generation"
+        timestamp: "[01:10:32] - [01:15:11]"
+        explanation: "The instructor specifically recommends Vanna AI as a natural language to SQL query generator tool, explaining that it enables agentic RAG functionality by allowing agents to query relational databases using natural language."
+
+      - question_number: 8
+        title: "Prompt Engineering Challenges"
+        question: "What specific problem does the instructor identify with students' PDF extraction prompts, and what comprehensive solution does he recommend?"
+        options:
+          A: "Prompts are too complex - solution: simplify the language"
+          B: "Models are inconsistent - solution: switch to more powerful models"
+          C: "Prompts work sometimes but fail other times due to weak guardrails - solution: strengthen safeguards, add explicit dos/don'ts, use examples, and iterate in ChatGPT/Gemini first"
+          D: "Extraction is too slow - solution: use parallel processing"
+        correct_answer: "C"
+        correct_answer_text: "Prompts work sometimes but fail other times due to weak guardrails - solution: strengthen safeguards, add explicit dos/don'ts, use examples, and iterate in ChatGPT/Gemini first"
+        topic: "Prompt Engineering & Robustness"
+        timestamp: "[00:39:32] - [00:41:03]"
+        explanation: "The instructor identifies the core issue: 'your prompt is not robust enough that sometimes it follows you sometimes it doesn't.' He recommends strengthening guardrails, being explicit with dos/don'ts, using tick marks and X marks, adding few-shot examples, and iterating the prompt in ChatGPT/Gemini interface first before bringing it back to the application."
+
+  part_2:
+    title: "Reinforcement Learning & Advanced Concepts"
+    questions:
+      - question_number: 9
+        title: "Reinforcement Learning Books & Future of AI"
+        question: "What are the three core textbooks recommended for the course, and why is reinforcement learning considered the future of AI according to the instructor?"
+        options:
+          A: "Deep Learning by Goodfellow, Machine Learning by Murphy, and AI: A Modern Approach by Russell & Norvig - because they cover foundational concepts"
+          B: "Grokking Deep Learning, Reinforcement Learning: An Introduction by Sutton, and Multi-Agent Reinforcement Learning - because RL will dominate AI from 2025 onwards and everything before will look like yesterday's technology"
+          C: "Python for Data Science, TensorFlow Guide, and Neural Networks Explained - because they focus on practical implementation"
+          D: "Pattern Recognition, Computer Vision, and Natural Language Processing - because they cover core AI applications"
+        correct_answer: "B"
+        correct_answer_text: "Grokking Deep Learning, Reinforcement Learning: An Introduction by Sutton, and Multi-Agent Reinforcement Learning - because RL will dominate AI from 2025 onwards and everything before will look like yesterday's technology"
+        topic: "Reinforcement Learning & Future of AI"
+        timestamp: "[01:21:29] - [01:24:38]"
+        explanation: "The instructor specifically mentions three books: 'Grokking Deep Learning' (which he's on his fourth copy of), 'Reinforcement Learning: An Introduction' by Richard Sutton (a Turing Award winner), and a book on Multi-Agent Reinforcement Learning. He emphasizes that from 2025 onwards, AI will be dominated by reinforcement learning, making previous technologies look outdated."
+
+      - question_number: 10
+        title: "Local Model Recommendations & Hardware Requirements"
+        question: "According to the instructor, what is the recommended model size for agents, and what hardware is required to run a 70 billion parameter model effectively?"
+        options:
+          A: "8 billion parameters for agents, requiring a single RTX 3080 for 70B models"
+          B: "32 billion parameters is the sweet spot for agents, and 70B models require four RTX 4090s or two A6000s (old generation) or one A6000 Blackwell generation"
+          C: "14 billion parameters for optimal performance, needing dual RTX 4080s for larger models"
+          D: "70 billion parameters for best results, requiring only 64GB RAM"
+        correct_answer: "B"
+        correct_answer_text: "32 billion parameters is the sweet spot for agents, and 70B models require four RTX 4090s or two A6000s (old generation) or one A6000 Blackwell generation"
+        topic: "Local Model Hardware Requirements"
+        timestamp: "[01:37:32] - [01:39:07]"
+        explanation: "The instructor clearly states that '32 billion I consider the sweet spot for agents' as it's powerful enough while still running on local hardware. For 70B models, he specifies the exact hardware requirements: 'four 4090s or two A6000s old generation or one A6000 Blackwell generation' as minimum requirements."
+
+      - question_number: 11
+        title: "Model Distillation Concept"
+        question: "What is model distillation, and what surprising phenomenon can occur during this process according to Jeffrey Hinton's research?"
+        options:
+          A: "Converting large models to smaller formats - the student model always performs worse than the teacher"
+          B: "A process where a smaller model learns from both data and a larger 'teacher' model through imitation - surprisingly, the student can sometimes outperform the master due to reduced overfitting"
+          C: "Compressing model weights to reduce storage - it always maintains exact performance"
+          D: "Training multiple models simultaneously - they always perform identically"
+        correct_answer: "B"
+        correct_answer_text: "A process where a smaller model learns from both data and a larger 'teacher' model through imitation - surprisingly, the student can sometimes outperform the master due to reduced overfitting"
+        topic: "Model Distillation & Student-Teacher Learning"
+        timestamp: "[01:41:00] - [01:42:42]"
+        explanation: "The instructor explains distillation as a student-teacher relationship where the small model learns both from data and by imitating the teacher. He mentions Jeffrey Hinton's discovery that 'sometimes distillation leads to a student who outdoes the master' because bigger models tend to overfit, while student models are less likely to overfit and can actually beat the master."
+
+      - question_number: 12
+        title: "Ollama and Local Model Integration"
+        question: "What is Ollama, and how should it be integrated with the project architecture according to the course instructions?"
+        options:
+          A: "A cloud-based model service that requires API keys for premium features"
+          B: "A local model server that runs AI models locally, integrated with OpenWebUI frontend, FastAPI backend, and connected to SQLite database - eliminating the need for frontier model APIs"
+          C: "A data processing tool for CSV files only"
+          D: "A web scraping framework for gathering training data"
+        correct_answer: "B"
+        correct_answer_text: "A local model server that runs AI models locally, integrated with OpenWebUI frontend, FastAPI backend, and connected to SQLite database - eliminating the need for frontier model APIs"
+        topic: "Local Model Architecture & Integration"
+        timestamp: "[01:32:39] - [01:48:32]"
+        explanation: "The instructor defines Ollama as 'a model server' that 'will take a AI model LLM and it will run locally.' He emphasizes using local models instead of frontier models, showing the architecture: OpenWebUI → FastAPI REST endpoint → Ollama → SQLite database, stating 'stop using frontier models from here now.'"
+
+      - question_number: 13
+        title: "Vanna AI Text-to-SQL System"
+        question: "How does Vanna AI work for text-to-SQL conversion, and what is required for high accuracy according to the instructor?"
+        options:
+          A: "It uses pure machine learning without any training data requirements"
+          B: "It's essentially a RAG system that requires proper training with real natural language questions and their corresponding SQL queries from enterprise query logs to achieve high accuracy"
+          C: "It only works with cloud databases and requires expensive subscriptions"
+          D: "It automatically understands any database without configuration"
+        correct_answer: "B"
+        correct_answer_text: "It's essentially a RAG system that requires proper training with real natural language questions and their corresponding SQL queries from enterprise query logs to achieve high accuracy"
+        topic: "Vanna AI & Text-to-SQL Systems"
+        timestamp: "[01:51:36] - [01:56:22]"
+        explanation: "The instructor explains that Vanna 'is just a RAG system' and emphasizes that 'you need to train Vanna properly and that is a long process you have to give real natural language questions and their sequels by harvesting your enterprise query logs and properly do a training of Vanna.' He warns that 'out of the box if you point Vanna to your SQL database and you expect magic to happen you'll be deeply disappointed.'"
+
+      - question_number: 14
+        title: "Multi-Agent Reinforcement Learning (MARL)"
+        question: "What is Multi-Agent Reinforcement Learning (MARL), and why is it considered significant in the current AI landscape?"
+        options:
+          A: "A basic machine learning technique used for simple classification tasks"
+          B: "The pinnacle of AI and cutting-edge state-of-the-art technology focused on teaching agents to collaborate as a team rather than individual excellence - highly sought after by FAANG companies"
+          C: "An outdated approach replaced by transformer models"
+          D: "A specialized tool only for gaming applications"
+        correct_answer: "B"
+        correct_answer_text: "The pinnacle of AI and cutting-edge state-of-the-art technology focused on teaching agents to collaborate as a team rather than individual excellence - highly sought after by FAANG companies"
+        topic: "Multi-Agent Reinforcement Learning Significance"
+        timestamp: "[01:26:15] - [01:27:48]"
+        explanation: "The instructor states 'multi-agent reinforcement learning is the pinnacle at this moment of AI it is absolutely absolutely the cutting edge in the state-of-the-art.' He emphasizes it's about teaching agents 'to become better by learning to play well with the team' rather than individual excellence, and mentions that FAANG companies will 'all jump at it' if you mention MARL expertise."
+
+      - question_number: 15
+        title: "Project Architecture & Integration"
+        question: "What is the complete architecture for the shipping calculator project, and what are the key components that need to be integrated?"
+        options:
+          A: "Simple web form connecting directly to a database with hardcoded queries"
+          B: "OpenWebUI frontend → FastAPI REST endpoint server → Vanna AI (for text-to-SQL) → Ollama (local LLM) → SQLite database, with natural language input processing and user-friendly response formatting"
+          C: "Cloud-based solution using only external APIs and services"
+          D: "Command-line interface with manual database queries"
+        correct_answer: "B"
+        correct_answer_text: "OpenWebUI frontend → FastAPI REST endpoint server → Vanna AI (for text-to-SQL) → Ollama (local LLM) → SQLite database, with natural language input processing and user-friendly response formatting"
+        topic: "Complete Project Architecture"
+        timestamp: "[01:59:38] - [02:02:45]"
+        explanation: "The instructor draws out the complete architecture: 'You have UI user makes a call this will hook into a rest endpoint... in the rest server of your choice What will you do you will call Vanna... Vanna is sitting upon your database... and you will call Vanna code it will get back the answer.' He shows the flow: OpenWebUI → REST server → Vanna → Database, with Ollama providing the LLM backend, emphasizing this eliminates the need for external model APIs."
