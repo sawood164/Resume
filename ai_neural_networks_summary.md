@@ -47,11 +47,11 @@ Imagine you're running an ice cream business. You notice sales change with tempe
 - Medical diagnosis and surgical procedures
 - Question answering systems
 
-![alt text](6.00.png)
+![alt text](6.00.png)-Ground truth function approximation graph
 
 ---
 
-## ⚡ Part 3: Building Blocks - Understanding Neurons
+##  Building Blocks - Understanding Neurons
 
 ### The Neuron Structure
 
@@ -93,7 +93,7 @@ Consider eating food - more food doesn't always mean more satisfaction. After a 
 
 ---
 
-## ⛰️ Part 5: Gradient Descent - The Learning Journey
+##   Gradient Descent - The Learning Journey
 
 ### The Hill Climbing Analogy
 
