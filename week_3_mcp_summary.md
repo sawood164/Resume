@@ -1,4 +1,4 @@
-Summary Week 3 – Video-3
+Summary– Video-3
 AI Foundations – Summer 2025
 
 🌐 MCP Server Deployment Design: Options & Reasoning
