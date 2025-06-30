@@ -101,10 +101,14 @@ Observe → Think → Act → Observe → Think → Act ...
 
 ### Equation:
 
-\(\tilde{a}\_t \in \mathcal{A} \cup \mathcal{L}\) Where:
 
-- \(\mathcal{A}\) = tool actions
-- \(\mathcal{L}\) = language actions (thoughts)
+\[
+\tilde{a}_t \in \mathcal{A} \cup \mathcal{L}
+\]
+
+Where:
+- **\(\mathcal{A}\)** = tool actions  
+- **\(\mathcal{L}\)** = language actions (thoughts)
 
 Thoughts:
 
